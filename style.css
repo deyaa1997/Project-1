@@ -1,0 +1,41 @@
+body {
+  background-image: url("./back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main {
+  margin-top: 300px;
+}
+
+#h {
+  color: rgb(60, 5, 109);
+  font-family: fantasy;
+  font-size: 100px;
+  text-align: center;
+  text-shadow: darkgoldenrod 3px 1px;
+}
+
+.h {
+  color: rgb(60, 5, 109);
+  font-family: fantasy;
+  font-size: 100px;
+  text-align: center;
+  text-shadow: darkgoldenrod 3px 1px;
+}
+
+.half {
+  display: grid;
+  justify-content: center;
+}
+
+.button {
+  background-color: rgb(60, 5, 109);
+  color: darkgoldenrod;
+  text-shadow: 1px 1px 2px;
+  font-size: 28px;
+  margin-left: 180px;
+  width: 300px;
+  height: 50px;
+  border-radius: 8px;
+}
