@@ -1,13 +1,13 @@
 const start = () => {
-  let str = "play";
+  let str = "playaa";
   const body = document.querySelector("body");
   // remove the last body inner
   body.innerHTML = "";
-  let x = 7;
+  let c = 7;
   // the counter for chances
   const counter = document.createElement("h1");
-  counter.id = "h";
-  counter.innerHTML = x;
+  counter.id = "counter";
+  counter.innerHTML = c;
   body.append(counter);
 
   const div = document.createElement("div");
@@ -36,15 +36,42 @@ const start = () => {
     divSpace.append(Space);
   }
 
-  const divChar = document.createElement("div")
-  divChar.id = "divChar"
+  const divChar = document.createElement("div");
+  divChar.id = "divChar";
   div.append(divChar);
-  
-  let alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  for (let z = 0 ; z < alphabet.length ; z++ ){
-      const char = document.createElement("button")
-      char.id = "char" + z ;
-      char.innerHTML = alphabet[z]
-      divChar.append(char);
+
+  let alphabet = "abcdefghijklmnopqrstuvwxyz";
+  for (let z = 0; z < alphabet.length; z++) {
+    const char = document.createElement("button");
+    char.id = "char" + z;
+    char.innerHTML = alphabet[z];
+    divChar.append(char);
+  }
+
+  for (let z = 0; z < alphabet.length; z++) {
+    document.getElementById("char" + z).addEventListener("click", function () {
+      let sum = 0;
+      for (let x = 0; x < str.length; x++) {
+        if (
+          document.getElementById("char" + z).innerHTML ===
+          document.getElementById("alph" + x).innerHTML
+        ) {
+          document.getElementById("alph" + x).style.color = "rgb(60, 5, 109)";
+          document.getElementById("alph" + x).style.textShadow =
+            "darkgoldenrod 3px 1px";
+          sum++;
+        }
+      }
+      document.getElementById("char" + z).innerHTML = "";
+      document.getElementById("char" + z).style.backgroundColor =
+        "darkgoldenrod";
+      document.getElementById("counter").innerHTML = --c;
+      if (sum >= 1) {
+        document.getElementById("counter").innerHTML = ++c;
+      }
+      if (document.getElementById("counter").innerHTML === "0" ){
+        alert("Game Over")
+      }
+    });
   }
 };

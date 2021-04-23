@@ -25,6 +25,14 @@ body {
   text-shadow: darkgoldenrod 3px 1px;
 }
 
+#counter{
+  font-family: fantasy;
+  font-size: 100px;
+  text-align: center;
+  color: rgb(60, 5, 109);
+  text-shadow: darkgoldenrod 3px 1px;
+}
+
 .half {
   display: grid;
   justify-content: center;
@@ -73,9 +81,22 @@ body {
 
 
 #divChar {
-  background-color: rgb(60, 5, 109);
-  margin-top: 300px;
-  width: fit-content;
-  margin-left: 650px;
+  width: 700px;
+  margin-top: 250px;
+  margin-left: 640px;
+
 }
+
+button{
+  background-color: rgb(60, 5, 109);
+  color: darkgoldenrod;
+  text-shadow: 1px 1px 2px;
+  font-size: 28px;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor:pointer;
+}
+
 
