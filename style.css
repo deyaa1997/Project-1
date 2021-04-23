@@ -17,10 +17,11 @@ body {
 }
 
 .h {
-  color: rgb(60, 5, 109);
+  
   font-family: fantasy;
   font-size: 100px;
   text-align: center;
+  color: rgb(60, 5, 109);
   text-shadow: darkgoldenrod 3px 1px;
 }
 
@@ -39,3 +40,42 @@ body {
   height: 50px;
   border-radius: 8px;
 }
+
+
+#div{
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  color: rgb(60, 5, 109);
+  font-family: fantasy;
+  font-size: 100px;
+  text-shadow: darkgoldenrod 3px 1px;
+}
+
+#divWord{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  height: 20px;
+  text-shadow: rgba(184, 135, 11, 0) 3px 1px ;
+  color: rgb(60, 5, 109,0);
+}
+
+
+#divSpace{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 30px;
+}
+
+
+#divChar {
+  background-color: rgb(60, 5, 109);
+  margin-top: 300px;
+  width: fit-content;
+  margin-left: 650px;
+}
+
