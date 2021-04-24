@@ -1,8 +1,9 @@
 const start = () => {
-  let str = "playaa";
+  let str = "danger";
   const body = document.querySelector("body");
   // remove the last body inner
   body.innerHTML = "";
+  body.style.backgroundColor = "rgb(169,91,44)"
   let c = 7;
   // the counter for chances
   const counter = document.createElement("h1");
@@ -32,7 +33,12 @@ const start = () => {
   for (let x = 0; x < str.length; x++) {
     const Space = document.createElement("p");
     Space.id = "Space";
-    Space.innerHTML = "_";
+    if(str[x] ===" "){
+      Space.innerHTML = " ";
+      Space.style.marginLeft= "15px"
+      Space.style.width = "45px"
+    }else{
+    Space.innerHTML = "_";}
     divSpace.append(Space);
   }
 
@@ -48,6 +54,7 @@ const start = () => {
     divChar.append(char);
   }
 
+  let s =0;
   for (let z = 0; z < alphabet.length; z++) {
     document.getElementById("char" + z).addEventListener("click", function () {
       let sum = 0;
@@ -56,18 +63,22 @@ const start = () => {
           document.getElementById("char" + z).innerHTML ===
           document.getElementById("alph" + x).innerHTML
         ) {
-          document.getElementById("alph" + x).style.color = "rgb(60, 5, 109)";
+          document.getElementById("alph" + x).style.color = "rgb(59,19,5)";
           document.getElementById("alph" + x).style.textShadow =
-            "darkgoldenrod 3px 1px";
+            "rgb(246,209,57) 3px 1px";
           sum++;
+          }
         }
-      }
+      s += sum;
       document.getElementById("char" + z).innerHTML = "";
       document.getElementById("char" + z).style.backgroundColor =
         "darkgoldenrod";
       document.getElementById("counter").innerHTML = --c;
       if (sum >= 1) {
         document.getElementById("counter").innerHTML = ++c;
+      }
+      if (s === str.length){
+        alert ("you win")
       }
       if (document.getElementById("counter").innerHTML === "0" ){
         alert("Game Over")
