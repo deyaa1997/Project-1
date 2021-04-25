@@ -1,14 +1,27 @@
+const generateWords = () => {
+  const footballPlayer = [  "zidane" , "ronaldo" , "messi"]
+}
+
+const backFun = function(x){
+  const body = document.querySelector("body");
+  body.innerHTML = "";
+  body.innerHTML = x;
+
+}
+
+
 const arr = ["abruptly" , "absurd" , "abyss" , "affix" , "askew" , "avenue" ,
 "awkward" , "axiom" , "azure" , "bagpipes" , "bandwagon" , "banjo" , "bayou","beekeeper"]
 
 let rand = arr[Math.floor(Math.random() * arr.length)]
-const start = () => {
+const start = (q = 0) => {
+  let bodyOriginal = document.querySelector("body").innerHTML
   let str = rand;
   const body = document.querySelector("body");
   // remove the last body inner
   body.innerHTML = "";
   body.style.backgroundColor = "rgb(169,91,44)"
-  let c = 7;
+  let c = 6;
   // the counter for chances
   
 
@@ -27,7 +40,7 @@ const start = () => {
   div1.append(counter);
 
   const img1 = document.createElement("img")
-  img1.setAttribute("src", "pic/7.png");
+  img1.setAttribute("src", "pic/6.png");
   img1.id= "img"
   div1.appendChild(img1)
 
@@ -97,37 +110,67 @@ const start = () => {
       }
       img1.setAttribute("src" , "pic/" + c + ".png")
       if (s === str.length){
+        document.getElementById("counter").innerHTML = "You are Winner"
+        document.getElementById("counter").style.fontSize = "125px"
         img1.innerHTML = ""
         img1.id = "img"
         img1.setAttribute("src" , "win.png")
+        // change divChar if you Win
         divChar.innerHTML= ""
+         // add back button 
         const playAgain = document.createElement("img")
-        playAgain.id = "img"
-        playAgain.setAttribute("src" , "try.jpg")
+        playAgain.id = "img1"
+        playAgain.setAttribute("src" , "home.png")
         divChar.appendChild(playAgain)
         const but = document.createElement("button")
-        but.id = "1"
-        divChar.appendChild(but)
-        document.getElementById("1").addEventListener("click",function(){
+        divChar.id = "dd"
+        setTimeout(function () {playAgain.appendChild(but)
+        document.getElementById("img1").addEventListener("click",function(){
+          return backFun(bodyOriginal);
+        }) },400)
+        // add try again button
+        const back = document.createElement("img")
+        back.id = "img2"
+        back.setAttribute("src" , "win.png")
+        divChar.appendChild(back)
+        const but2 = document.createElement("b")
+        divChar.id = "dd"
+        setTimeout(function () {back.appendChild(but2)
+        document.getElementById("img2").addEventListener("click",function(){
           return start()
-        })
+        }) },400)
       }
 
       if (document.getElementById("counter").innerHTML === "You Have   " + 0 + "  Attempts" ){
+        document.getElementById("counter").innerHTML = "You are Loser"
+        document.getElementById("counter").style.fontSize = "125px"
         img1.innerHTML = ""
         img1.id = "img"
         img1.setAttribute("src" , "pic/loose2.jpg")
+        // change divChar if you Loose
         divChar.innerHTML = ""
+         // add back button 
         const playAgain = document.createElement("img")
-        playAgain.id = "img"
-        playAgain.setAttribute("src" , "try.jpg")
+        playAgain.id = "img1"
+        playAgain.setAttribute("src" , "home.png")
         divChar.appendChild(playAgain)
         const but = document.createElement("button")
-        but.id = "1"
-        divChar.appendChild(but)
-        document.getElementById("1").addEventListener("click",function(){
+        divChar.id = "dd"
+        setTimeout(function () {playAgain.appendChild(but)
+        document.getElementById("img1").addEventListener("click",function(){
+          return backFun(bodyOriginal);
+        }) },400)
+        // add try again button
+        const back = document.createElement("img")
+        back.id = "img2"
+        back.setAttribute("src" , "try.jpg")
+        divChar.appendChild(back)
+        const but2 = document.createElement("b")
+        divChar.id = "dd"
+        setTimeout(function () {back.appendChild(but2)
+        document.getElementById("img2").addEventListener("click",function(){
           return start()
-        })
+        }) },400)
       }
     });
   }
