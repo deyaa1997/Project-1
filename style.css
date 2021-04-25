@@ -149,3 +149,62 @@ button{
 
 
 
+.bn632-hover {
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(59,19,5);
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border-style: solid;
+  border-color: black;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn19 {
+    background-image: linear-gradient(
+      to right,
+      #f5ce62,
+      #e43603,
+      #fa7199,
+      #e85a19
+    );
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+
+
+.half1{
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  margin-top: 330px;
+  margin-right: 200px;
+}
+
+
+.select{
+  color: #e85a19;
+  text-shadow: 6px  6px 4px black ;
+  font-size: 83px;
+  margin-top: 10px;
+  margin-left: 120px;
+}

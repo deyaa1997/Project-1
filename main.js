@@ -1,21 +1,97 @@
-const generateWords = () => {
-  const footballPlayer = [  "zidane" , "ronaldo" , "messi"]
-}
-
-const backFun = function(x){
+const choose = () => {
   const body = document.querySelector("body");
   body.innerHTML = "";
-  body.innerHTML = x;
 
+  const div = document.createElement("div")
+  div.className = "main"
+  body.append(div)
+
+  const divHalf = document.createElement("div")
+  divHalf.className = "half1"
+  div.append(divHalf)
+
+
+  const select = document.createElement("p")
+  select.innerHTML = "Please Select Content : "
+  select.className = "select"
+  div.append(select);
+
+
+
+  const humanBody = [  "head" , "neck" , "heart", "stomach" , "throat" ]
+  const foods = [  "mansaf" , "brosted" , "shawrma", "burger" , "pizza" ]
+  const animals = [  "eagle" , "tiger" , "turtle", "giraffe" , "monkey" ]
+  const countries = [  "algeria" , "jordan" , "brazil", "turkey" , "syria" ]
+  const fotballPlayer = [  "ronaldo" , "zidane" , "muller", "iniesta" , "cavani" ]
+  const jobs = [  "actor" , "chef" , "judge", "nurse" , "writer" ]
+
+  const content = ["Human Body" , "Foods" , "Animals" , "Countries" , "Football Player" , "Jobs"]
+  for (let x =0 ; x < 6 ; x++){
+    newButton = document.createElement("button")
+    newButton.className = "bn632-hover bn19";
+    newButton.innerHTML = content[x]
+    divHalf.append(newButton);
+    newButton.addEventListener("click", () => {
+      if (x === 0 ){
+        return generateWords(humanBody);
+      }
+      if (x === 1 ){
+        return generateWords(foods);
+      }
+      if (x === 2 ){
+        return generateWords(animals);
+      }
+      if (x === 3 ){
+        return generateWords(countries);
+      }
+      if (x === 4 ){
+        return generateWords(fotballPlayer);
+      }
+      if (x === 5 ){
+        return generateWords(jobs);
+      }
+    })
+  }
+  
 }
 
 
-const arr = ["abruptly" , "absurd" , "abyss" , "affix" , "askew" , "avenue" ,
-"awkward" , "axiom" , "azure" , "bagpipes" , "bandwagon" , "banjo" , "bayou","beekeeper"]
 
-let rand = arr[Math.floor(Math.random() * arr.length)]
-const start = (q = 0) => {
-  let bodyOriginal = document.querySelector("body").innerHTML
+
+
+
+const generateWords = (arr) => {
+  return start(arr[Math.floor(Math.random() * arr.length)])
+}
+
+
+
+
+const backFun = function(){
+  const body = document.querySelector("body");
+  body.innerHTML = "";
+
+  const div = document.createElement("div")
+  div.className = "main"
+  body.append(div)
+
+  const divHalf = document.createElement("div")
+  divHalf.className = "half"
+  div.append(divHalf)
+
+  const button = document.createElement("button")
+  button.className = "button"
+  button.innerHTML = "BEGIN"
+  divHalf.append(button)
+
+  button.addEventListener("click" , () => {
+    return choose ()
+  })
+}
+
+
+
+const start = (rand) => {
   let str = rand;
   const body = document.querySelector("body");
   // remove the last body inner
@@ -126,18 +202,18 @@ const start = (q = 0) => {
         divChar.id = "dd"
         setTimeout(function () {playAgain.appendChild(but)
         document.getElementById("img1").addEventListener("click",function(){
-          return backFun(bodyOriginal);
+        return backFun();
         }) },400)
         // add try again button
         const back = document.createElement("img")
         back.id = "img2"
-        back.setAttribute("src" , "win.png")
+        back.setAttribute("src" , "play again.jpg")
         divChar.appendChild(back)
         const but2 = document.createElement("b")
         divChar.id = "dd"
         setTimeout(function () {back.appendChild(but2)
         document.getElementById("img2").addEventListener("click",function(){
-          return start()
+        return choose()
         }) },400)
       }
 
@@ -147,6 +223,8 @@ const start = (q = 0) => {
         img1.innerHTML = ""
         img1.id = "img"
         img1.setAttribute("src" , "pic/loose2.jpg")
+        document.getElementById("divWord").style.color = "rgba(246,209,57,1)"
+        document.getElementById("divWord").style.textShadow = "rgba(184, 135, 11, 1) 3px 1px"
         // change divChar if you Loose
         divChar.innerHTML = ""
          // add back button 
@@ -158,7 +236,7 @@ const start = (q = 0) => {
         divChar.id = "dd"
         setTimeout(function () {playAgain.appendChild(but)
         document.getElementById("img1").addEventListener("click",function(){
-          return backFun(bodyOriginal);
+        return backFun();
         }) },400)
         // add try again button
         const back = document.createElement("img")
@@ -169,7 +247,7 @@ const start = (q = 0) => {
         divChar.id = "dd"
         setTimeout(function () {back.appendChild(but2)
         document.getElementById("img2").addEventListener("click",function(){
-          return start()
+        return choose()
         }) },400)
       }
     });
